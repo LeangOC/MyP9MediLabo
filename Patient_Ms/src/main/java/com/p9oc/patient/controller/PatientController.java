@@ -13,7 +13,7 @@ public class PatientController {
 
     @Autowired
     private PatientService patientService;
-    @GetMapping("/api/patients")
+    @GetMapping("/api/patient")
     public ResponseEntity<List<Patient>> getAllPatients() {
         List<Patient> patients = patientService.getAllPatients();
         return ResponseEntity.ok(patients);

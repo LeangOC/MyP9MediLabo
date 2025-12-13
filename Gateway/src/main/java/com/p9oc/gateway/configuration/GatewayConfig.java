@@ -1,4 +1,4 @@
-package com.myp9medilabo.mygateway.configuration;
+package com.p9oc.gateway.configuration;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
