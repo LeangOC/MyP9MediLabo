@@ -9,3 +9,5 @@
 
 # dev3 : Client
 1. Diriger les requêtes vers Gateway
+
+# hom4 <= dev3
