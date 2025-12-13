@@ -1,4 +1,4 @@
-package com.myp9medilabo.mygateway.configuration;
+package com.p9oc.gateway.configuration;
 
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
@@ -26,12 +26,8 @@ public class GatewayConfig {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/api/patients/**")
-                        .uri("http://localhost:9001"))  // Use patients microservice
-                .route(r -> r.path("/api/notes/**")
-                        .uri("http://localhost:9000"))  // Use notes microservice
-                .route(r -> r.path("/api/healthrisks/**")
-                        .uri("http://localhost:9003"))  // Use healthrisk  microservice
+                .route(r -> r.path("/api/patient/**")
+                        .uri("http://localhost:8082"))  // Use patients microservice
                 .build();
     }
 }
