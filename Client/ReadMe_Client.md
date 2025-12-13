@@ -10,7 +10,7 @@
 1. Implémenter la  classe PatientsProxy pour diriger la requête ves le Gateway :
     - @FeignClient(name = "patient-gateway", url = "localhost:8081")
 2. Exposer l'Endpoint  dans la classe MyClientController : 
-   -  @GetMapping("/api/patients")
+   -  @GetMapping("/api/patient")
 3.  Implémentation la classe PatientBean , une copie celle du Microservice Patients :
    - Feign récupère la liste des patients et nous retourne sous forme de JSON brute.
      (On  stocke chaque patient dans  un objet de type Patient pour pouvoir les manipuler facilement plus tard) 
