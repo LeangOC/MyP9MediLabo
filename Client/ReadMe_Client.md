@@ -13,6 +13,8 @@
    -  @GetMapping("/api/patient")
 3.  Implémentation la classe PatientBean , une copie celle du Microservice Patients :
    - Feign récupère la liste des patients et nous retourne sous forme de JSON brute.
-     (On  stocke chaque patient dans  un objet de type Patient pour pouvoir les manipuler facilement plus tard) 
-      
-
+     (On  stocke chaque patient dans  un objet de type Patient pour pouvoir les manipuler facilement plus tard)
+4.   GET http://localhost:8080/api/patient
+ 
+     
+<img width="274" height="151" alt="image" src="https://github.com/user-attachments/assets/8c83c9ea-ff9e-409a-92f8-6f66d33f566b" />
