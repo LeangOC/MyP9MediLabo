@@ -16,3 +16,5 @@
 # dev05 : Gateway , Client
 1. Config minimale pour Auth Basic avec un login et un mot de passe
 
+# dev06 : Client
+1. Le Client (8080) relaye le header Authorization à Feign

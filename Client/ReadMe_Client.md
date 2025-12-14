@@ -24,5 +24,8 @@
   
   <img width="225" height="160" alt="image" src="https://github.com/user-attachments/assets/986d9fb4-6f2d-4389-a5a9-01df7396cb14" />
 
-  
+# dev06
+- Refactoriser la classe FeignClientConfigureation prendre en compte le header Authorization
+  curl -u user:password http://localhost:8080/api/patient => envoie le header :
+  _Authorization: Basic dXNlcjpwYXNzd29yZA==_
   
