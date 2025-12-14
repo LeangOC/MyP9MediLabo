@@ -20,4 +20,9 @@
 
 # dev05
 - L'utilisateur ne saisit pas pour le moment le login et le mot passe : données en dur dans le nouvelle classe FeignClientConfiguration.
+- GET http://localhost:8080/api/patient ( Le routage fonctionne au niveau de Gateway malgré l'existence de Spring Security )
+  
+  <img width="225" height="160" alt="image" src="https://github.com/user-attachments/assets/986d9fb4-6f2d-4389-a5a9-01df7396cb14" />
+
+  
   
