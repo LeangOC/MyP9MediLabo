@@ -7,4 +7,15 @@
 # dev04
 1. Ajout dans pom.xml : spring-boot-starter-security
    => En redémarrant Gateway : un login / mot de passe est obligatoire pour se connecter 
-   => il dirige automatiquement vers http://localhost:8081/login
+   => il dirige automatiquement vers http://localhost:8081/login avec la requêue get http://localhost:8081/api/patient
+ 
+ <img width="173" height="119" alt="image" src="https://github.com/user-attachments/assets/040082f8-6b3c-4694-ac06-b1b707cb813b" />
+
+ En rentrant le login=user et le mot de passe généré : xxxxxxxx => 
+ <img width="237" height="240" alt="image" src="https://github.com/user-attachments/assets/c791bb28-3473-4a36-ae39-d563c9fd94c2" />
+
+Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:8081/api/patient" ça ne marche pas :
+- pas de redirection vers par la page de login Spring Sécurity
+- même en utilisant :  curl -u user:5cb4f8dd-fc27-4a05-9f6e-ec06b8ad9836 http://localhost:8080/api/patient -v
+     => Erreur : {"timestamp":"2025-12-14T15:14:55.861Z","status":500,"error":"Internal Server Error","path":"/api/patient"}
+  ( curl permet d'envoyer le header Authorization )
