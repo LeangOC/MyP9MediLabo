@@ -18,6 +18,6 @@
       
    <img width="274" height="151" alt="image" src="https://github.com/user-attachments/assets/8c83c9ea-ff9e-409a-92f8-6f66d33f566b" />
 
-# dev04
+# dev05
 - L'utilisateur ne saisit pas pour le moment le login et le mot passe : données en dur dans le nouvelle classe FeignClientConfiguration.
   
