@@ -14,5 +14,5 @@
 1. Implémentation Auth Basic
 
 # dev05 : Gateway , Client
-1. Config minimale
+1. Config minimale pour Auth Basic avec un login et un mot de passe
 
