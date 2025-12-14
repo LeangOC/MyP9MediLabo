@@ -12,3 +12,7 @@
 
 # dev04 <= dev3 : Gateway
 1. Implémentation Auth Basic
+
+# dev05 : Gateway , Client
+1. Config minimale
+

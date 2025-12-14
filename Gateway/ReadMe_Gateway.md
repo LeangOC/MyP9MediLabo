@@ -19,3 +19,7 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 - même en utilisant :  curl -u user:5cb4f8dd-fc27-4a05-9f6e-ec06b8ad9836 http://localhost:8080/api/patient -v
      => Erreur : {"timestamp":"2025-12-14T15:14:55.861Z","status":500,"error":"Internal Server Error","path":"/api/patient"}
   ( curl permet d'envoyer le header Authorization )
+
+# dev04 
+- Implémentation d'une config minimale avec SecurityConfig : Auth Basic avec un login "user et le mot de passe "password"
+  ( en non plus le mot de passe généré par Spring Secutiy)
