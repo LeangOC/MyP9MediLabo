@@ -11,3 +11,5 @@
 1. Diriger les requêtes vers Gateway
 
 # hom4 <= dev3
+1. Remanier le fichier pom.xml
+2. implémentation Auth Basic.
