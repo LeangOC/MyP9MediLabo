@@ -11,4 +11,4 @@
 1. Diriger les requêtes vers Gateway
 
 # dev04 <= dev3 : Gateway
-1. 
+1. Implémentation Auth Basic
