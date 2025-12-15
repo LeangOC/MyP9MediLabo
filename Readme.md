@@ -18,3 +18,6 @@
 
 # dev06 : Client
 1. Le Client (8080) relaye le header Authorization à Feign
+
+# dev07 : Client,Gateway
+1.  Relayer la page de login du Client pour l'authentification auprès de Gateway

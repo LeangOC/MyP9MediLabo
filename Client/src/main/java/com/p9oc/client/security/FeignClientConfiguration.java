@@ -1,7 +1,7 @@
 package com.p9oc.client.security;
+
 import feign.RequestInterceptor;
-import feign.RequestTemplate;
-import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -12,18 +12,16 @@ public class FeignClientConfiguration {
 
     @Bean
     public RequestInterceptor relayAuthorizationInterceptor() {
-        return new RequestInterceptor() {
-            @Override
-            public void apply(RequestTemplate template) {
-                ServletRequestAttributes attributes =
-                        (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        return template -> {
+            ServletRequestAttributes attrs =
+                    (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
 
-                if (attributes != null) {
-                    HttpServletRequest request = attributes.getRequest();
-                    String authHeader = request.getHeader("Authorization");
-
-                    if (authHeader != null) {
-                        template.header("Authorization", authHeader);
+            if (attrs != null) {
+                HttpSession session = attrs.getRequest().getSession(false);
+                if (session != null) {
+                    String auth = (String) session.getAttribute("AUTH_HEADER");
+                    if (auth != null) {
+                        template.header("Authorization", auth);
                     }
                 }
             }

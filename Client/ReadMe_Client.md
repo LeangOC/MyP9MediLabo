@@ -29,3 +29,6 @@
   curl -u user:password http://localhost:8080/api/patient => envoie le header :
   _Authorization: Basic dXNlcjpwYXNzd29yZA==_
   
+# dev07
+1.  Refactoriser le  @Controller AuthenticationController 
+2. Reimplémenter la classe FeignClientConfiguration
