@@ -40,4 +40,4 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 1. Implémentation de la page /patient/list.html : juste pour afficher la liste des patients
 2. GET http://localhost:8080/api/patient  
    
-   <img width="779" height="395" alt="image" src="https://github.com/user-attachments/assets/bc14af28-63bb-4e05-8aa6-eb8990ae9c8d" />
+   <img width="388" height="197" alt="image" src="https://github.com/user-attachments/assets/bc14af28-63bb-4e05-8aa6-eb8990ae9c8d" />
