@@ -36,3 +36,5 @@
 http://localhost:8080/login   => http://localhost:8080/api/patient  
 <img width="215" height="162" alt="image" src="https://github.com/user-attachments/assets/2cfdf0aa-e169-4c6e-a63c-cb79a4552e23" />   =>   <img width="225" height="120" alt="image" src="https://github.com/user-attachments/assets/00923045-e49c-4153-8cff-9e39bd20cfd5" />
 
+# dev08
+1. Implémentation de la page /patient/list.html : juste pour afficher la liste des clients

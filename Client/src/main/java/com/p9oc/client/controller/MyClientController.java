@@ -14,7 +14,7 @@ public class MyClientController {
 
     @Autowired
     private PatientsProxy PatientsProxy;
-    @GetMapping("/api/patient")
+    @GetMapping("/api/mypatient")  // remplacé par @Controller de /api/patient laissé pour moi
     public ResponseEntity<List<PatientBean>> getAllPatients() {
         List<PatientBean> patients =  PatientsProxy.getAllPatients();
         return ResponseEntity.ok(patients);

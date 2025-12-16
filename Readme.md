@@ -21,3 +21,6 @@
 
 # dev07 : Client,Gateway
 1.  Relayer la page de login du Client pour l'authentification auprès de Gateway
+
+# dev08 : Client
+1. Implémenter la page /api/patient/list.html 
