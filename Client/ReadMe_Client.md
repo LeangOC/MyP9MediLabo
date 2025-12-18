@@ -53,5 +53,7 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 
 # dev10
 1.  Implémenter l'action "delete" dans la page /patient/list.html
-2.  Ajouter dans la contrôleur ClientController : @GetMapping("/patient/delete/{id}")
+2.  Ajouter dans le contrôleur ClientController : @GetMapping("/patient/delete/{id}")
 3.  Ajouter dans PatientsProxy : @DeleteMapping( value = "/api/patient/{id}")
+4.  http://localhost:8080/api/patient
+   <img width="317" height="218" alt="image" src="https://github.com/user-attachments/assets/560ab727-05d0-4cd3-981e-d8ec5d108a40" />
