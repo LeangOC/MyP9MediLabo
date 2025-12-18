@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 public class PatientBean {
 
-    private String id;
+    private Integer id;
     private String firstname;
     private String lastname;
     @DateTimeFormat(pattern = "dd/MM/yyyy")

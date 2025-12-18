@@ -12,4 +12,8 @@ import java.util.List;
 public interface PatientsProxy {
     @GetMapping(value = "/api/patient")
     List<PatientBean> getAllPatients();
+
+    @PostMapping(value= "/api/patient")
+    PatientBean createPatient(@RequestBody PatientBean patientBean);
+
 }

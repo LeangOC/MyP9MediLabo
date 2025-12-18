@@ -41,3 +41,10 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 2. GET http://localhost:8080/api/patient  
    
    <img width="388" height="197" alt="image" src="https://github.com/user-attachments/assets/bc14af28-63bb-4e05-8aa6-eb8990ae9c8d" />
+
+# dev09
+1. Ajout fonctionnalité de la  /patient/add.html
+2. Modifier en Integer PatientBean_id (Client ) sinon
+   - [Request processing failed: feign.FeignException$BadRequest: [400 Bad Request] 
+   during [POST] to [http://localhost:8081/api/patient]
+   - JSON parse error côté Microservice Patient_Ms

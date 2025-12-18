@@ -7,16 +7,22 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RequestMapping("/api/patient")
 @RestController
 public class PatientController {
 
     @Autowired
     private PatientService patientService;
-    @GetMapping("/api/patient")
+    @GetMapping
     public ResponseEntity<List<Patient>> getAllPatients() {
         List<Patient> patients = patientService.getAllPatients();
         return ResponseEntity.ok(patients);
+    }
+
+    @PostMapping
+    public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
+           Patient createdPatient = patientService.createPatient(patient);
+            return ResponseEntity.ok(createdPatient);
     }
 
 }

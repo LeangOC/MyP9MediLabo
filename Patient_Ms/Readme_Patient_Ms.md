@@ -7,3 +7,7 @@
 4. url http://localhost:8080/api/patient OK : Affichage les 4 lignes en Json
 
 <img width="280" height="135" alt="image" src="https://github.com/user-attachments/assets/1e83d65a-d1a0-4e62-bd0a-0309a4a1ace0" />
+
+# dev09
+1. Modifier en Integer Patient_id : Sinon JSON parse error ici
+2. Implémenter PatientRepository.createPatient

@@ -23,4 +23,7 @@
 1.  Relayer la page de login du Client pour l'authentification auprès de Gateway
 
 # dev08 : Client
-1. Implémenter la page /api/patient/list.html 
+1. Implémenter la fonctionnalité de page /api/patient/list
+
+# dev09 : Patient_Ms, Client
+1. Implémenter la fonctionnalité de la page /patient/add
