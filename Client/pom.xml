@@ -65,6 +65,11 @@
 			<artifactId>jakarta.validation-api</artifactId>
 		</dependency>
 
+		<!-- Pour ne pas avoir : Failed to set up a Bean Validation provider: jakarta.validation -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
