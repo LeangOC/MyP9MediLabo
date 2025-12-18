@@ -23,7 +23,10 @@
 1.  Relayer la page de login du Client pour l'authentification auprès de Gateway
 
 # dev08 : Client
-1. Implémenter la fonctionnalité de page /api/patient/list
+1. Implémenter la fonctionnalité l'affichage de page /patient/list
 
 # dev09 : Patient_Ms, Client
 1. Implémenter la fonctionnalité de la page /patient/add
+
+# dev10 : Client, Patient_Ms
+1. Implémentation de la fonctionnalité "delete" de la page /patient/list

@@ -16,4 +16,7 @@ public interface PatientsProxy {
     @PostMapping(value= "/api/patient")
     PatientBean createPatient(@RequestBody PatientBean patientBean);
 
+    @DeleteMapping( value = "/api/patient/{id}")
+    PatientBean deletePatient(@PathVariable("id") String id);
+
 }

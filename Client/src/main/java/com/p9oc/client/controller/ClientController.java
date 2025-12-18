@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import jakarta.validation.Valid;
@@ -57,6 +58,12 @@ public class ClientController {
         }
         return "redirect:/patient";
     }
-
+    @GetMapping("/patient/delete/{id}")
+    public String deletePatient(@PathVariable String id, Model model, HttpServletRequest request){
+        PatientsProxy.deletePatient(id);
+        List<PatientBean> patients =  PatientsProxy.getAllPatients();
+        model.addAttribute("patients", patients);
+        return "redirect:/patient";
+    }
 
 }

@@ -11,3 +11,7 @@
 # dev09
 1. Modifier en Integer Patient_id : Sinon JSON parse error ici
 2. Implémenter PatientService.createPatient
+
+# dev10
+1. Ajout dans PatientController : @DeleteMapping("/{id}")
+2. Ajout dans PatientService : getPatientById(int id) et deletePatient(int id)

@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+
 @RequestMapping("/api/patient")
 @RestController
 public class PatientController {
@@ -23,6 +25,18 @@ public class PatientController {
     public ResponseEntity<Patient> createPatient(@RequestBody Patient patient) {
            Patient createdPatient = patientService.createPatient(patient);
             return ResponseEntity.ok(createdPatient);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Optional<Patient>> deletePatient(@PathVariable String id) {
+        int intId = Integer.parseInt(id);
+        Optional<Patient> patient = patientService.getPatientById(intId);
+        if (patient.isPresent()) {
+            patientService.deletePatient(intId);
+            return ResponseEntity.ok(patient);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
 }

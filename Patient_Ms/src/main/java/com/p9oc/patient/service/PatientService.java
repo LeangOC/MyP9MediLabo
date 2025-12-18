@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -26,5 +27,16 @@ public class PatientService {
         return patientRepository.save(patient);
     }
 
+    public Optional<Patient> getPatientById(Integer id) {
+        return patientRepository.findById(id);
+    }
+
+    public void deletePatient(Integer id) {
+        if (patientRepository.existsById(id)) {
+            patientRepository.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("Patient not found.");
+        }
+    }
 }
 
