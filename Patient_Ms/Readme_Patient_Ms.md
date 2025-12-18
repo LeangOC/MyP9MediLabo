@@ -10,4 +10,4 @@
 
 # dev09
 1. Modifier en Integer Patient_id : Sinon JSON parse error ici
-2. Implémenter PatientRepository.createPatient
+2. Implémenter PatientService.createPatient
