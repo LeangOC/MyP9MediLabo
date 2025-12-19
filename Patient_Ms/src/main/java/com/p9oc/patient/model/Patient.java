@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -22,5 +23,7 @@ public class Patient {
     private String gender;
     private String address;
     private String phone_number;
+    @OneToMany(mappedBy = "patient_id", cascade = CascadeType.ALL)
+    private List<RendezVous> rendezVous;
 }
 
