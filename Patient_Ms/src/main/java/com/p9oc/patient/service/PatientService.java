@@ -38,5 +38,13 @@ public class PatientService {
             throw new IllegalArgumentException("Patient not found.");
         }
     }
+    public Patient updatePatient(Patient updatedPatient) {
+        if (patientRepository.existsById(updatedPatient.getId())) {
+            updatedPatient.setId(updatedPatient.getId());
+            return patientRepository.save(updatedPatient);
+        } else {
+            throw new IllegalArgumentException("Patient not found.");
+        }
+    }
 }
 

@@ -15,3 +15,8 @@
 # dev10
 1. Ajout dans PatientController : @DeleteMapping("/{id}")
 2. Ajout dans PatientService : getPatientById(int id) et deletePatient(int id)
+
+# dev11
+1. Ajout dans PatientControll@PutMappinger : @GetMapping("/{id}")
+2. Ajout dans PatientController : @PutMapping 
+3. Ajout dans PatientService : patientService.updatePatient
