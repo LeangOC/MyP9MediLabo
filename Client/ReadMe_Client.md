@@ -64,3 +64,7 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 3. Ajouter dans PatientsProxy : @GetMapping( value = "/api/patient/{id}"
 4. Ajouter dans le contrôleur ClientController : PatientsProxy.updatePatient(patientBean);
 5. Ajouter dans PatientsProxy : @PutMapping(value= "/api/patients")
+6. http://localhost:8080/patient :  
+<img width="481" height="252" alt="image" src="https://github.com/user-attachments/assets/ad5acefd-9c4e-4732-9ccb-b5d87af4a488" />
+
+   
