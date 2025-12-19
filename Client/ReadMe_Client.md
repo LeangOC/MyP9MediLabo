@@ -58,3 +58,9 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 4.  http://localhost:8080/api/patient  
     <img width="368" height="235" alt="image" src="https://github.com/user-attachments/assets/fd0f45a2-3f14-4896-9db8-1bceb0aaadf1" />
    
+# dev11
+1. Implémenter l'action "Edit" dans la page /patient/list.html
+2. Ajouter dans le contrôleur ClientController : @GetMapping("/patients/update/{id}")
+3. Ajouter dans PatientsProxy : @GetMapping( value = "/api/patient/{id}"
+4. Ajouter dans le contrôleur ClientController : PatientsProxy.updatePatient(patientBean);
+5. Ajouter dans PatientsProxy : @PutMapping(value= "/api/patients")

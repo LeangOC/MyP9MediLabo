@@ -19,4 +19,10 @@ public interface PatientsProxy {
     @DeleteMapping( value = "/api/patient/{id}")
     PatientBean deletePatient(@PathVariable("id") String id);
 
+    @GetMapping( value = "/api/patient/{id}")
+    PatientBean getPatient(@PathVariable("id") String id);
+
+    @PutMapping(value= "/api/patient")
+    PatientBean updatePatient(@RequestBody PatientBean patientBean);
+
 }

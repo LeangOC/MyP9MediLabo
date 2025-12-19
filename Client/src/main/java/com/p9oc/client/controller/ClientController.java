@@ -52,10 +52,13 @@ public class ClientController {
             redirectAttributes.addFlashAttribute("error", "Saisie incorrecte");
             return "redirect:/patient/add";
         }
-
         if (StringUtils.isEmpty(patientBean.getId())) {
             PatientsProxy.createPatient(patientBean);
         }
+     else {
+        PatientsProxy.updatePatient(patientBean);
+
+    }
         return "redirect:/patient";
     }
     @GetMapping("/patient/delete/{id}")
@@ -65,5 +68,13 @@ public class ClientController {
         model.addAttribute("patients", patients);
         return "redirect:/patient";
     }
+
+    @GetMapping("/patient/update/{id}")
+    public String editPatient(@PathVariable String id, Model model, HttpServletRequest request){
+        PatientBean patient = PatientsProxy.getPatient(id);
+        model.addAttribute("patient", patient);
+        return "patient/add";
+    }
+
 
 }

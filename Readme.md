@@ -29,4 +29,7 @@
 1. Implémenter la fonctionnalité de la page /patient/add
 
 # dev10 : Client, Patient_Ms
-1. Implémentation de la fonctionnalité "delete" de la page /patient/list
+1. Implémentation de la fonctionnalité "delete" de la page /patient/list  
+
+# dev11 : client, Patient_MS
+1. Implémentation de la fonctionnalité "Edit" de la page /patient/list
