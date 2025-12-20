@@ -33,3 +33,6 @@
 
 # dev11 : client, Patient_MS
 1. Implémentation de la fonctionnalité "Edit" de la page /patient/list
+
+# dev12 : Patient_Ms, Client
+1. Implémentation de la fonctionnalité Rendez-Vous

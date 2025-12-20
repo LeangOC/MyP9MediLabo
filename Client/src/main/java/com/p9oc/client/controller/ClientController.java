@@ -1,6 +1,7 @@
 package com.p9oc.client.controller;
 
 import com.p9oc.client.beans.PatientBean;
+import com.p9oc.client.beans.RendezVousBean;
 import com.p9oc.client.proxies.PatientsProxy;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,5 +77,22 @@ public class ClientController {
         return "patient/add";
     }
 
+    @GetMapping("/patient/{id}/rdv")
+    public String showRdvForm(@PathVariable String id, Model model) {
+
+        PatientBean patient = PatientsProxy.getPatient(id);
+
+        model.addAttribute("patient", patient);
+        model.addAttribute("rdv", new RendezVousBean());
+
+        return "patient/rdv";
+    }
+    @PostMapping("/patient/{id}/rdv")
+    public String createRdv(@PathVariable String id,
+                            RendezVousBean rdv) {
+
+        PatientsProxy.createRdv(id, rdv);
+        return "redirect:/patient";
+    }
 
 }

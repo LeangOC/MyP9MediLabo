@@ -35,6 +35,7 @@
             <th class="text-center">Birthdate</th>
             <th class="text-center">Gender</th>
             <th class="text-center">Phone Number</th>
+            <th class="text-center">Next Appointment</th>
             <th class="text-center">Action</th>
         </tr>
         </thead>
@@ -45,14 +46,23 @@
             <td class="text-center" th:text="${#dates.format(patient.birthdate, 'dd/MM/yyyy')}"></td>
             <td class="text-center" th:text="${patient.gender}"></td>
             <td class="text-center" th:text="${patient.phone_number}"></td>
+            <td class="text-center">
+  <span th:text="${patient.nextRendezVous != null
+      ? #temporals.format(patient.nextRendezVous.dateHeure, 'dd/MM/yyyy HH:mm')
+      : 'Aucun'}">
+  </span>
+            </td>
             <td style="width: 15%" class="text-center">
                 <a th:href="@{/patient/update/{id}(id=${patient.id})}">Edit</a>&nbsp;|&nbsp;
+                <a th:href="@{/patient/{id}/rdv(id=${patient.id})}">
+                    Rdv
+                </a>&nbsp;|&nbsp;
                 <a th:href="@{patient/delete/{id}(id=${patient.id})}"
                    onclick="return confirm('Voulez-vous vraiment supprimer cet utilisateur ?');">
                     Delete
                 </a>
             </td>
-        </tr>
+       </tr>
         </tbody>
     </table>
 </div>

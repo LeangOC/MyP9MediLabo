@@ -20,3 +20,9 @@
 1. Ajout dans PatientControll@PutMappinger : @GetMapping("/{id}")
 2. Ajout dans PatientController : @PutMapping 
 3. Ajout dans PatientService : patientService.updatePatient
+
+# dev12
+1. Implémenter l'entité RendezVous  : Création automatique de la table rdv par JPA 
+2. Implémenter la classe repository : RendezVousRepository
+3. Adapte l'entité Patient pour la relation @OneToMany
+4. Ajout méthode Patient.getNextRendezVous() pour le calcul métier.

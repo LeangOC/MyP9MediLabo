@@ -1,9 +1,11 @@
 package com.p9oc.client.proxies;
 
 import com.p9oc.client.beans.PatientBean;
+import com.p9oc.client.beans.RendezVousBean;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 
@@ -24,5 +26,10 @@ public interface PatientsProxy {
 
     @PutMapping(value= "/api/patient")
     PatientBean updatePatient(@RequestBody PatientBean patientBean);
+
+    @PostMapping(value = "/api/patient/{id}/rdv")
+    RendezVousBean createRdv(@PathVariable("id") String id,
+                             @RequestBody RendezVousBean rdv);
+
 
 }
