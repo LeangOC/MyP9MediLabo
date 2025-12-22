@@ -73,3 +73,8 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 3.  Implémentation : rdv.html
 4.  list.html : ajout <a th:href="@{/patient/{id}/rdv(id=${patient.id})}">
 5. PatientsProxy : ajout @PostMapping(value = "/api/patient/{id}/rdv")
+6. http://localhost:8080/patient                                 =>                                             http://localhost:8080/patient/1/rdv 
+   <img width="500" height="242" alt="image" src="https://github.com/user-attachments/assets/dca792d7-c585-47f9-85a9-73cbf4b519db" />                =>
+   <img width="286" height="84" alt="image" src="https://github.com/user-attachments/assets/aa4cf246-d619-4246-af39-86e2133b8e63" />
+
+   
