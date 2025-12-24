@@ -36,3 +36,6 @@
 
 # dev12 : Patient_Ms, Client
 1. Implémentation de la fonctionnalité Rendez-Vous
+
+# solution1 
+1. Migrer vers une auth propre (JWT)

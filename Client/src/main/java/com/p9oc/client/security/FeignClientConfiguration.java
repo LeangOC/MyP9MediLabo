@@ -11,7 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 public class FeignClientConfiguration {
 
     @Bean
-    public RequestInterceptor relayAuthorizationInterceptor() {
+    public RequestInterceptor jwtInterceptor() {
         return template -> {
             ServletRequestAttributes attrs =
                     (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -19,9 +19,9 @@ public class FeignClientConfiguration {
             if (attrs != null) {
                 HttpSession session = attrs.getRequest().getSession(false);
                 if (session != null) {
-                    String auth = (String) session.getAttribute("AUTH_HEADER");
-                    if (auth != null) {
-                        template.header("Authorization", auth);
+                    String jwt = (String) session.getAttribute("JWT");
+                    if (jwt != null) {
+                        template.header("Authorization", "Bearer " + jwt);
                     }
                 }
             }

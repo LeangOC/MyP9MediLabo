@@ -1,10 +1,16 @@
 package com.p9oc.client.controller;
 
 import jakarta.servlet.http.HttpSession;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
+
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
@@ -23,12 +29,26 @@ public class AuthenticationController {
             @RequestParam String password,
             HttpSession session
     ) {
-        String token = Base64.getEncoder()
-                .encodeToString((username + ":" + password)
-                        .getBytes(StandardCharsets.UTF_8));
+        String basic = Base64.getEncoder()
+                .encodeToString((username + ":" + password).getBytes());
 
-        session.setAttribute("AUTH_HEADER", "Basic " + token);
+        RestTemplate restTemplate = new RestTemplate();
 
-        return "redirect:/patient";
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("Authorization", "Basic " + basic);
+
+        HttpEntity<Void> request = new HttpEntity<>(headers);
+
+        ResponseEntity<String> response =
+                restTemplate.exchange(
+                        "http://localhost:8081/login",
+                        HttpMethod.POST,
+                        request,
+                        String.class
+                );
+
+        session.setAttribute("JWT", response.getBody());
+
+    return "redirect:/patient";
     }
 }
