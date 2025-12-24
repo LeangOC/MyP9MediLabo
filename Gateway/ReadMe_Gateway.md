@@ -23,3 +23,11 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 # dev05
 - Implémentation d'une config minimale avec SecurityConfig : Auth Basic avec un login "user et le mot de passe "password"
   ( non plus le mot de passe généré par Spring Secutiy)
+
+# solution1 : migration vers JWT
+1. Ajout dépendances dans fichier pom.xml : io.jsonwebtoken
+2. Implémentation : classe JwtService, 
+3. Implémentation : AuthController @PostMapping("/login")
+4. Refactorer : SecurityWebFilterChain
+5. Implémentation : JwtAuthenticationFilter
+6. Refactorer : SecurityConfig.ReactiveAuthenticationManager 

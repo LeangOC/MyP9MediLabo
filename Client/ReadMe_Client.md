@@ -77,4 +77,8 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
    <img width="500" height="242" alt="image" src="https://github.com/user-attachments/assets/dca792d7-c585-47f9-85a9-73cbf4b519db" />                =>
    <img width="286" height="84" alt="image" src="https://github.com/user-attachments/assets/aa4cf246-d619-4246-af39-86e2133b8e63" />
 
-   
+ # solution1 : migration vers JWT
+1.  Refactorer : AuthenticationController @PostMapping("/login")
+2.  Refactorer : FeignClientConfiguration.RequestInterceptor
+
+
