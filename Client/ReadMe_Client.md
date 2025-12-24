@@ -78,7 +78,11 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
    <img width="286" height="84" alt="image" src="https://github.com/user-attachments/assets/aa4cf246-d619-4246-af39-86e2133b8e63" />
 
  # solution1 : migration vers JWT
-1.  Refactorer : AuthenticationController @PostMapping("/login")
-2.  Refactorer : FeignClientConfiguration.RequestInterceptor
+1.  Refactorisation : AuthenticationController @PostMapping("/login")
+2.  Refactorisation : FeignClientConfiguration.RequestInterceptor
 
+# solution2 : ajout logout
+1. Refactorisation : la page /patient/list.html
+2. ajout : ClientController @PostMapping("/logout")
+3. refactorisation : ClientController @GetMapping pour sécuriser l'accès à /patient
 

@@ -4,6 +4,7 @@ import com.p9oc.client.beans.PatientBean;
 import com.p9oc.client.beans.RendezVousBean;
 import com.p9oc.client.proxies.PatientsProxy;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +23,10 @@ public class ClientController {
     private PatientsProxy PatientsProxy;
     @GetMapping("/patient")
     public String patientList(Model model, HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        if (session == null || session.getAttribute("JWT") == null) {
+            return "redirect:/login";
+        }
         List<PatientBean> patients =  PatientsProxy.getAllPatients();
         model.addAttribute("patients", patients);
         return "patient/list";
@@ -95,4 +100,9 @@ public class ClientController {
         return "redirect:/patient";
     }
 
+    @PostMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/login";
+    }
 }

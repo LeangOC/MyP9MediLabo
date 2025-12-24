@@ -39,3 +39,6 @@
 
 # solution1 
 1. Migrer vers une auth propre (JWT)
+
+# solution2
+1. Implémentation de la fonctionnalité logout
