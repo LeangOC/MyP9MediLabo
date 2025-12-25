@@ -12,6 +12,8 @@ public class GatewayConfig {
         return builder.routes()
                 .route(r -> r.path("/api/patient/**")
                         .uri("http://localhost:8082"))  // Use patients microservice
+                .route(r -> r.path("/api/notes/**")
+                        .uri("http://localhost:8083")) // use Note microservice
                 .build();
     }
 }

@@ -31,3 +31,7 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 4. Refactorer : SecurityWebFilterChain
 5. Implémentation : JwtAuthenticationFilter
 6. Refactorer : SecurityConfig.ReactiveAuthenticationManager 
+
+# solution4 
+1. Refactorisation : GatewayConfig en ajoutant la route vers http://localhost:8083
+2. Refactorisation : SecurityConfig.SecurityWebFilterChain pour /api/notes/**

@@ -40,8 +40,11 @@
 # solution1 
 1. Migrer vers une auth propre (JWT)
 
-# solution2
+# solution2 
 1. Implémentation de la fonctionnalité logout
 
-# solution3
+# solution3 : Note_Ms
 1.  Implémentation du microservice Note_MS
+
+# solution4 : Gateway
+1. Brancher Notes_MS au Gateway
