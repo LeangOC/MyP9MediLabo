@@ -42,3 +42,6 @@
 
 # solution2
 1. Implémentation de la fonctionnalité logout
+
+# solution3
+1.  Implémentation du microservice Note_MS
