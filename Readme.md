@@ -55,3 +55,6 @@
 # solution6 
 1. Initialisation  microservice Risk_MS
 
+# solution7
+1. Implémentation microservice Risk_MS
+

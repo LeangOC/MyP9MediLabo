@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.p9oc</groupId>
-	<artifactId>mynotes</artifactId>
+	<artifactId>note</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>note</name>
 	<description>Projet Medilabo Note</description>

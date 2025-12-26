@@ -14,6 +14,8 @@ public class GatewayConfig {
                         .uri("http://localhost:8082"))  // Use patients microservice
                 .route(r -> r.path("/api/notes/**")
                         .uri("http://localhost:8083")) // use Note microservice
+                .route(r -> r.path("/api/risk/**")
+                        .uri("http://localhost:8084")) // use Risk microservice
                 .build();
     }
 }
