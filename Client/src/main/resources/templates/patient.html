@@ -19,13 +19,33 @@
     <ul class="list-group mb-4">
         <li class="list-group-item"><b>Nom :</b> <span th:text="${patient.lastname}"></span></li>
         <li class="list-group-item"><b>Prénom :</b> <span th:text="${patient.firstname}"></span></li>
-        <li class="list-group-item"><b>Date de naissance :</b>
+        <li class="list-group-item">
+            <b>Date de naissance :</b>
             <span th:text="${#dates.format(patient.birthdate, 'dd/MM/yyyy')}"></span>
         </li>
         <li class="list-group-item"><b>Genre :</b> <span th:text="${patient.gender}"></span></li>
     </ul>
 
-    <h3>Historique des notes</h3>
+    <!-- 🩺 RISQUE -->
+    <h3>Évaluation du risque diabétique</h3>
+
+    <div th:if="${risk != null}"
+         class="alert"
+         th:classappend="${risk.riskLevel == 'NONE' ? ' alert-success' :
+                          risk.riskLevel == 'BORDERLINE' ? ' alert-warning' :
+                          risk.riskLevel == 'IN_DANGER' ? ' alert-danger' :
+                          ' alert-dark'}">
+
+        <strong>Niveau de risque :</strong>
+        <span th:text="${risk.riskLevel}"></span>
+    </div>
+
+    <div th:if="${risk == null}" class="alert alert-secondary">
+        Risque non disponible
+    </div>
+
+    <!-- 📝 NOTES -->
+    <h3 class="mt-4">Historique des notes</h3>
 
     <div th:if="${notes.isEmpty()}">
         <p>Aucune note pour ce patient.</p>
@@ -40,6 +60,7 @@
         </div>
     </div>
 
+    <!-- ➕ AJOUT -->
     <h4 class="mt-4">Ajouter une note</h4>
 
     <form th:action="@{/notes/add}" method="post">

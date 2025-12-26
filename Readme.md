@@ -58,3 +58,6 @@
 # solution7
 1. Implémentation microservice Risk_MS
 
+# solution8
+1.  Intégration dans Client le niveau de risque.
+

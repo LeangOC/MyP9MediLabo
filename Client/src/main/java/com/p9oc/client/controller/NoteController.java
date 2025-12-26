@@ -26,7 +26,7 @@ public class NoteController {
         this.noteProxy = noteProxy;
     }
 
-    @GetMapping("/patient/{id}")
+    @GetMapping("/patient/{id}/details")
     public String patientDetail(@PathVariable Integer id, Model model) {
 
         PatientBean patient = patientsProxy.getPatient(id);
