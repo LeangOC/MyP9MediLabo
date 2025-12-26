@@ -86,7 +86,7 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 2. ajout : ClientController @PostMapping("/logout")
 3. refactorisation : ClientController @GetMapping pour sécuriser l'accès à /patient
 
-# Solution5 : Relier Client_Ms au Note_Ms
+# Solution5 : Relier Client au Note_Ms
 1. Implémentation :  Entité NoteBean,  
 2. Refactorisation : page /patient/list. (ajout colonne Détails)
 3. Implémentation  : NoteController_@GetMapping("/patient/{id}")
