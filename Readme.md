@@ -51,3 +51,7 @@
 
 # solution5 : Client
 1. Relier Client au Note_Ms
+
+# solution6 
+1. Initialisation  microservice Risk_MS
+
