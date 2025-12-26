@@ -48,3 +48,6 @@
 
 # solution4 : Gateway
 1. Brancher Notes_MS au Gateway
+
+# solution5 : Client_Ms 
+1. Relier Client_MS au Note_Ms

@@ -68,7 +68,7 @@ public class ClientController {
         return "redirect:/patient";
     }
     @GetMapping("/patient/delete/{id}")
-    public String deletePatient(@PathVariable String id, Model model, HttpServletRequest request){
+    public String deletePatient(@PathVariable Integer id, Model model, HttpServletRequest request){
         PatientsProxy.deletePatient(id);
         List<PatientBean> patients =  PatientsProxy.getAllPatients();
         model.addAttribute("patients", patients);
@@ -76,14 +76,14 @@ public class ClientController {
     }
 
     @GetMapping("/patient/update/{id}")
-    public String editPatient(@PathVariable String id, Model model, HttpServletRequest request){
+    public String editPatient(@PathVariable Integer id, Model model, HttpServletRequest request){
         PatientBean patient = PatientsProxy.getPatient(id);
         model.addAttribute("patient", patient);
         return "patient/add";
     }
 
     @GetMapping("/patient/{id}/rdv")
-    public String showRdvForm(@PathVariable String id, Model model) {
+    public String showRdvForm(@PathVariable Integer id, Model model) {
 
         PatientBean patient = PatientsProxy.getPatient(id);
 
@@ -93,7 +93,7 @@ public class ClientController {
         return "patient/rdv";
     }
     @PostMapping("/patient/{id}/rdv")
-    public String createRdv(@PathVariable String id,
+    public String createRdv(@PathVariable Integer id,
                             RendezVousBean rdv) {
 
         PatientsProxy.createRdv(id, rdv);
