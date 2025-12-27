@@ -92,4 +92,6 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 3. Implémentation  : NoteController_@GetMapping("/patient/{id}")
 4. Implémentation :  page patient.html
 5. Ajout : NoteController_@PostMapping("/notes/add")
-6. Implémentation : NoteProxy pour le routage 
+6. Implémentation : NoteProxy pour le routage
+
+<img width="612" height="276" alt="image" src="https://github.com/user-attachments/assets/5d82f4e1-59da-49e4-bfed-a4302ff1f70a" />
