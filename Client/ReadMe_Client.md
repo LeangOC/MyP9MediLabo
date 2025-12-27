@@ -86,3 +86,6 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 2. ajout : ClientController @PostMapping("/logout")
 3. refactorisation : ClientController @GetMapping pour sécuriser l'accès à /patient
 
+<img width="608" height="264" alt="image" src="https://github.com/user-attachments/assets/916db1ee-f361-4561-a00e-4b4f78376f88" />
+
+
