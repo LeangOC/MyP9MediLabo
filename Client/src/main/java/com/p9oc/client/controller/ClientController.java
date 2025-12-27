@@ -20,14 +20,14 @@ import java.util.List;
 @Controller
 public class ClientController {
     @Autowired
-    private PatientsProxy PatientsProxy;
+    private PatientsProxy patientsProxy;
     @GetMapping("/patient")
     public String patientList(Model model, HttpServletRequest request){
         HttpSession session = request.getSession(false);
         if (session == null || session.getAttribute("JWT") == null) {
             return "redirect:/login";
         }
-        List<PatientBean> patients =  PatientsProxy.getAllPatients();
+        List<PatientBean> patients =  patientsProxy.getAllPatients();
         model.addAttribute("patients", patients);
         return "patient/list";
     }
@@ -59,25 +59,25 @@ public class ClientController {
             return "redirect:/patient/add";
         }
         if (StringUtils.isEmpty(patientBean.getId())) {
-            PatientsProxy.createPatient(patientBean);
+            patientsProxy.createPatient(patientBean);
         }
      else {
-        PatientsProxy.updatePatient(patientBean);
+        patientsProxy.updatePatient(patientBean);
 
     }
         return "redirect:/patient";
     }
     @GetMapping("/patient/delete/{id}")
     public String deletePatient(@PathVariable Integer id, Model model, HttpServletRequest request){
-        PatientsProxy.deletePatient(id);
-        List<PatientBean> patients =  PatientsProxy.getAllPatients();
+        patientsProxy.deletePatient(id);
+        List<PatientBean> patients =  patientsProxy.getAllPatients();
         model.addAttribute("patients", patients);
         return "redirect:/patient";
     }
 
     @GetMapping("/patient/update/{id}")
     public String editPatient(@PathVariable Integer id, Model model, HttpServletRequest request){
-        PatientBean patient = PatientsProxy.getPatient(id);
+        PatientBean patient = patientsProxy.getPatient(id);
         model.addAttribute("patient", patient);
         return "patient/add";
     }
@@ -85,7 +85,7 @@ public class ClientController {
     @GetMapping("/patient/{id}/rdv")
     public String showRdvForm(@PathVariable Integer id, Model model) {
 
-        PatientBean patient = PatientsProxy.getPatient(id);
+        PatientBean patient = patientsProxy.getPatient(id);
 
         model.addAttribute("patient", patient);
         model.addAttribute("rdv", new RendezVousBean());
@@ -96,7 +96,7 @@ public class ClientController {
     public String createRdv(@PathVariable Integer id,
                             RendezVousBean rdv) {
 
-        PatientsProxy.createRdv(id, rdv);
+        patientsProxy.createRdv(id, rdv);
         return "redirect:/patient";
     }
 

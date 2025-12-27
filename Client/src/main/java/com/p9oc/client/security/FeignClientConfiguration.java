@@ -20,11 +20,18 @@ public class FeignClientConfiguration {
                 HttpSession session = attrs.getRequest().getSession(false);
                 if (session != null) {
                     String jwt = (String) session.getAttribute("JWT");
+                    System.out.println(">>> Feign JWT = " + jwt);
                     if (jwt != null) {
                         template.header("Authorization", "Bearer " + jwt);
                     }
+                } else {
+                    System.out.println(">>> NO SESSION");
                 }
-            }
+            } else {
+                System.out.println(">>> NO REQUEST ATTRIBUTES");
+                    }
+
+
         };
     }
 }

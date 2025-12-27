@@ -93,3 +93,6 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 4. Implémentation :  page patient.html
 5. Ajout : NoteController_@PostMapping("/notes/add")
 6. Implémentation : NoteProxy pour le routage 
+
+# Solution7 : Relier Client au Risk_Ms
+1. Refactorisation : patient.html,ClientController,NoteController,RiskProxy,FeignClientConfiguration
