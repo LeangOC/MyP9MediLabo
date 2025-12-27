@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@FeignClient(name = "patient-gateway", url = "localhost:8081")
+@FeignClient(name = "patient-gateway", url = "gateway:8081")
 @Component
 public interface PatientsProxy {
     @GetMapping(value = "/api/patient")

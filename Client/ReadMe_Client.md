@@ -96,3 +96,6 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 
 # Solution7 : Relier Client au Risk_Ms
 1. Refactorisation : patient.html,ClientController,NoteController,RiskProxy,FeignClientConfiguration
+
+# Solution : Amélioration 
+1.  Refactorisation page /patient/list.html

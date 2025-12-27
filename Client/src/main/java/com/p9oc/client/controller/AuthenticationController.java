@@ -41,7 +41,7 @@ public class AuthenticationController {
 
         ResponseEntity<String> response =
                 restTemplate.exchange(
-                        "http://localhost:8081/login",
+                        "http://gateway:8081/login",
                         HttpMethod.POST,
                         request,
                         String.class

@@ -6,7 +6,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "risk-service", url = "http://localhost:8081")
+@FeignClient(name = "risk-service", url = "http://gateway:8081")
 
 public interface RiskProxy {
     @GetMapping("/api/risk/patient/{id}")

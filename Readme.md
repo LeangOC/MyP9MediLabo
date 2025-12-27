@@ -61,3 +61,6 @@
 # solution8 : Client
 1.  Intégration dans Client le niveau de risque.
 
+# Solution : Client
+1. Amélioration
+

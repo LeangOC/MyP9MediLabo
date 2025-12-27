@@ -1,0 +1,68 @@
+services:
+
+  mysql:
+    image: mysql:8.3
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: patientdb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: medilabo
+      MYSQL_PASSWORD: medilabo
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  mongo:
+    image: mongo:7
+    container_name: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  patient_ms:
+    build: ./patient_ms
+    container_name: patient_ms
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+
+  note_ms:
+    build: ./note_ms
+    container_name: note_ms
+    ports:
+      - "8083:8083"
+    depends_on:
+      - mongo
+
+  risk_ms:
+    build: ./risk_ms
+    container_name: risk_ms
+    ports:
+      - "8084:8084"
+
+  gateway:
+    build: ./gateway
+    container_name: gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - patient_ms
+      - note_ms
+      - risk_ms
+
+  client:
+    build: ./client
+    container_name: client
+    ports:
+      - "8080:8080"
+    depends_on:
+      - gateway
+
+volumes:
+  mysql-data:
+  mongo-data:

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
-    @FeignClient(name = "note-service", url = "http://localhost:8081")
+    @FeignClient(name = "note-service", url = "http://gateway:8081")
     public interface NoteProxy {
 
         @GetMapping("/api/notes/patient/{patientId}")
