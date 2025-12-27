@@ -1,0 +1,11 @@
+com\p9oc\risk\model\NoteBean.class
+com\p9oc\risk\proxy\NoteProxy.class
+com\p9oc\risk\security\FeignAuthInterceptor.class
+com\p9oc\risk\service\RiskService.class
+com\p9oc\risk\model\PatientBean.class
+com\p9oc\risk\controller\RiskController.class
+com\p9oc\risk\model\RiskAssessment.class
+com\p9oc\risk\model\RiskLevel.class
+com\p9oc\risk\proxy\PatientProxy.class
+com\p9oc\risk\RiskApplication.class
+com\p9oc\risk\service\RiskTriggers.class
