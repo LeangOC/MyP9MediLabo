@@ -26,3 +26,6 @@
 2. Implémenter la classe repository : RendezVousRepository
 3. Adapte l'entité Patient pour la relation @OneToMany
 4. Ajout méthode Patient.getNextRendezVous() pour le calcul métier.
+
+# solution
+1. Renommer le projet patientms

@@ -61,6 +61,7 @@
 # solution8 : Client
 1.  Intégration dans Client le niveau de risque.
 
-# Solution : Client
-1. Amélioration
+# Solution : Dockerisation du projet Medilabo Solutions
+1. Implémentation fichier Dockerfile pour chaque interface.
+2. Implémentation fichier docker-composer.yml pour l'ensemble du projet.
 

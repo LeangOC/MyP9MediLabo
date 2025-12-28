@@ -12,16 +12,16 @@ public class GatewayConfig {
 
                 .route("patient-service", r -> r
                         .path("/api/patient/**")
-                        .uri("http://patient_ms:8082")
+                        .uri("http://patientms:8082")
                 )
                 .route("note-service", r -> r
                         .path("/api/notes/**")
-                        .uri("http://note_ms:8083")
+                        .uri("http://notems:8083")
                 )
 
                 .route("risk-service", r -> r
                         .path("/api/risk/**")
-                        .uri("http://risk_ms:8084")
+                        .uri("http://riskms:8084")
                 )
                 .build();
     }

@@ -3,8 +3,9 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Client/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Gateway/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Note_Ms/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Patient_Ms/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Risk_Ms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/notems/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/patientms/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/riskms/src/main/java" charset="UTF-8" />
   </component>
 </project>

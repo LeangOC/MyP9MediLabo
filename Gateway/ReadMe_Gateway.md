@@ -35,3 +35,6 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 # solution4 
 1. Refactorisation : GatewayConfig en ajoutant la route vers http://localhost:8083
 2. Refactorisation : SecurityConfig.SecurityWebFilterChain pour /api/notes/**
+
+# solution : docker
+1. renommer localhost dans la classe customRouteLocator correspondant à chaque interface en patientms, notems et riskms 

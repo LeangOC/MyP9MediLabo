@@ -13,3 +13,6 @@
     => Solution remplacer la version Spring-boot 3.5.9 par 3.2.3
 8. Implémentation : FeignAuthInterceptor ( Risk_MS récupère le JWT entrant et le renvoie)
 9. Test OK sous POSTMAN de GET /api/risk/patient/1 =>  { "patientId": 1, "riskLevel": "NONE" }
+
+# solution
+1. Renommer le projet en riskms

@@ -99,3 +99,4 @@ http://localhost:8080/login   => http://localhost:8080/api/patient
 
 # Solution : Amélioration 
 1.  Refactorisation page /patient/list.html
+2.  Remplacer localhost par gateway dans les classes proxies

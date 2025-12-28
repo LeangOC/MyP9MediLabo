@@ -4,3 +4,6 @@
 3.  remplacer dans pom.xml par : Spring boot 3.2.3, spring-boot-starter-web 
     => car lors de démarrage , on se retrouve avec une base nommée "test"
 4. Implémentation de DataLoader pour charger les données.
+
+# solution
+1. renommage du projet en notems

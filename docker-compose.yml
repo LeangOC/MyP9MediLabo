@@ -1,7 +1,7 @@
 services:
 
   mysql:
-    image: mysql:8.3
+    image: mysql:8.0.42
     container_name: mysql
     restart: always
     environment:
@@ -11,8 +11,13 @@ services:
       MYSQL_PASSWORD: medilabo
     ports:
       - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
+    networks:
+      - MedilabNework
+
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 5s
+      retries: 10
 
   mongo:
     image: mongo:7
@@ -20,49 +25,64 @@ services:
     restart: always
     ports:
       - "27017:27017"
-    volumes:
-      - mongo-data:/data/db
+    networks:
+      - MedilabNework
 
-  patient_ms:
-    build: ./patient_ms
-    container_name: patient_ms
+
+  patientms:
+    build: ./patientms
+    container_name: patientms
     ports:
       - "8082:8082"
+    networks:
+      - MedilabNework
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
 
-  note_ms:
-    build: ./note_ms
-    container_name: note_ms
+
+  notems:
+    build: ./notems
+    container_name: notems
     ports:
       - "8083:8083"
+    networks:
+      - MedilabNework
     depends_on:
       - mongo
 
-  risk_ms:
-    build: ./risk_ms
-    container_name: risk_ms
+
+  riskms:
+    build: ./riskms
+    container_name: riskms
     ports:
       - "8084:8084"
+    networks:
+    - MedilabNework
 
   gateway:
     build: ./gateway
     container_name: gateway
     ports:
       - "8081:8081"
+    networks:
+      - MedilabNework
     depends_on:
-      - patient_ms
-      - note_ms
-      - risk_ms
+      - patientms
+      - notems
+      - riskms
+
 
   client:
     build: ./client
     container_name: client
     ports:
       - "8080:8080"
+    networks:
+      - MedilabNework
     depends_on:
       - gateway
 
-volumes:
-  mysql-data:
-  mongo-data:
+networks:
+  MedilabNework:
+    driver: bridge
