@@ -27,7 +27,7 @@ public class GatewayConfig {
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
                 .route(r -> r.path("/api/patient/**")
-                        .uri("http://localhost:8082"))  // Use patients microservice
+                        .uri("http://patientms:8082"))  // Use patients microservice
                 .build();
     }
 }
