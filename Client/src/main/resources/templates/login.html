@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - My MediLabo Solutions</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+<div class="login-container">
+    <div class="header">
+        <button class="logo-btn">médiLabo Solutions</button>
+    </div>
+
+    <form th:action="@{/login}" method="post" class="login-form">
+        <input type="text" id="username" name="username" placeholder="texts" required>
+        <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+        <button type="submit" class="login-btn">Se connecter</button>
+         <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+    </form>
+</div>
+</body>
+</html>
+

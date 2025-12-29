@@ -1,0 +1,24 @@
+package com.p9oc.client.beans;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class PatientBean {
+
+    private Integer id;
+    private String firstname;
+    private String lastname;
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private Date birthdate;
+    private String gender;
+    private String address;
+    private String phone_number;
+    private RendezVousBean nextRendezVous;
+}
