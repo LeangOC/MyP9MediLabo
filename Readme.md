@@ -67,4 +67,8 @@
 3. Implémentation fichier docker-composer.yml pour l'ensemble du projet.
 
 # Master
-1 Merge de la branch Solution vers Master.
+1 Merge de la branch Solution vers Master.  
+2. GET http://localhost:8080/patient  
+
+<img width="1378" height="504" alt="image" src="https://github.com/user-attachments/assets/80574b38-865f-4f3a-a771-d45f08e7613f" />
+
