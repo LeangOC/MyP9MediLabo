@@ -62,7 +62,7 @@
 1.  Intégration dans Client le niveau de risque.
 
 # Solution : Dockerisation du projet Medilabo Solutions
-1. Renommage Patient_Ms, Note_Ms et Risk_Ms en patientms, notems et riskms
+1. Renommage Patient_Ms, Note_Ms et Risk_Ms en Patientms, Notems et Riskms
 2. Implémentation fichier Dockerfile pour chaque interface.
 3. Implémentation fichier docker-composer.yml pour l'ensemble du projet.
 
