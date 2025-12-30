@@ -65,6 +65,9 @@
 1. Renommage Patient_Ms, Note_Ms et Risk_Ms en Patientms, Notems et Riskms
 2. Implémentation fichier Dockerfile pour chaque interface.
 3. Implémentation fichier docker-composer.yml pour l'ensemble du projet.
+4. La commande "docker ps -a" :
+<img width="1717" height="332" alt="image" src="https://github.com/user-attachments/assets/3757fbc2-75db-453f-abef-b4e73267614b" />
+
 
 # Master
 1 Merge de la branch Solution vers Master.  
