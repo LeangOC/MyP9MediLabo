@@ -75,3 +75,8 @@
 
 <img width="1378" height="504" alt="image" src="https://github.com/user-attachments/assets/80574b38-865f-4f3a-a771-d45f08e7613f" />
 
+# Master2 : Gateway
+1. Mise en place de Javadoc pour la Gateway
+2. La page javadoc de Gateway :  
+   Gateway/target/site/apidocs/index.html  
+   
