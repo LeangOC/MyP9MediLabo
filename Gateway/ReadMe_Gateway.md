@@ -45,6 +45,10 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 3. lancer la commande "mvn javadoc:javadoc"
 4. Création répertoire /docs
 5. copier le contenu du répertoire  Gateway/target/site/apidocs/ vers le répertoire /docs
-6. Pour accéder à la page javadoc de Gateway :
-  =>  Local : Gateway/target/site/apidocs/index.html en local
-  =>  Github : /docs/index.html 
+6. Pour accéder à la page javadoc de Gateway, deux façon:   
+      =>  Local (IDE Intellij ) : Gateway/target/site/apidocs/index.html   
+      
+   <img width="443" height="215" alt="image" src="https://github.com/user-attachments/assets/aecbed49-d147-4a70-bb3e-c09a1772b737" />
+
+     =>  Github : "https://leangoc.github.io/MyP9MediLabo"  
+   <img width="437" height="213" alt="image" src="https://github.com/user-attachments/assets/75af24ef-65dd-456f-a478-e4788faafc2a" />
