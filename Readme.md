@@ -78,6 +78,6 @@
 # Master2 : Gateway ( pour plus de détails voir le fichier ReadMe_Gateway.md dans Gateway)
 1. Mise en place de Javadoc pour la Gateway
 2. Pour accéder à la page javadoc de Gateway :
-      =>  Local : Gateway/target/site/apidocs/index.html en local
-      =>  Github : Gateway/javadoc/index.html  
+      =>  Local  : Gateway/target/site/apidocs/index.html en local
+      =>  Github : /javadoc/index.html  
    
