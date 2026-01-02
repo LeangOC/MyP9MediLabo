@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.p9oc.gateway"},{"l":"com.p9oc.gateway.configuration"},{"l":"com.p9oc.gateway.controller"},{"l":"com.p9oc.gateway.security"}];updateSearchResults();
