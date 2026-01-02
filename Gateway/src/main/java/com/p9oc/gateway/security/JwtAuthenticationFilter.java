@@ -12,6 +12,13 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
+/**
+ * Filtre d’authentification JWT.
+ * <p>
+ * Intercepte les requêtes entrantes afin d’extraire et valider
+ * le token JWT présent dans l’en-tête Authorization.
+ * </p>
+ */
 @Component
 public class JwtAuthenticationFilter implements WebFilter {
 
@@ -20,7 +27,14 @@ public class JwtAuthenticationFilter implements WebFilter {
     public JwtAuthenticationFilter(JwtService jwtService) {
         this.jwtService = jwtService;
     }
-
+    /**
+     * Filtre les requêtes HTTP et injecte l’authentification
+     * dans le contexte de sécurité réactif.
+     *
+     * @param exchange échange serveur
+     * @param chain chaîne de filtres
+     * @return flux réactif
+     */
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, WebFilterChain chain) {
 

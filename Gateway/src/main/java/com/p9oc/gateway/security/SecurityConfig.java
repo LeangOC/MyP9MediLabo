@@ -14,7 +14,13 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UserDetailsRepositoryReactiveAuthenticationManager;
-
+/**
+ * Configuration de la sécurité Spring WebFlux.
+ * <p>
+ * Définit les règles d’accès, l’authentification
+ * et l’intégration du filtre JWT.
+ * </p>
+ */
 @Configuration
 @EnableWebFluxSecurity
 public class SecurityConfig {
@@ -24,7 +30,12 @@ public class SecurityConfig {
     public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
-
+    /**
+     * Chaîne de filtres de sécurité.
+     *
+     * @param http configuration HTTP
+     * @return SecurityWebFilterChain
+     */
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http

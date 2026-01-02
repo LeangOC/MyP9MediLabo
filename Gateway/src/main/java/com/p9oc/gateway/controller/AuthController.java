@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 import java.util.Base64;
-
+/**
+ * Contrôleur d’authentification.
+ * <p>
+ * Permet à un utilisateur de s’authentifier via Basic Auth
+ * et d’obtenir un token JWT.
+ * </p>
+ */
 @RestController
 public class AuthController {
 
@@ -22,7 +28,12 @@ public class AuthController {
         this.jwtService = jwtService;
         this.authManager = authManager;
     }
-
+    /**
+     * Endpoint de connexion.
+     *
+     * @param authHeader en-tête Authorization en Basic Auth
+     * @return token JWT encapsulé dans une réponse HTTP
+     */
     @PostMapping("/login")
     public Mono<ResponseEntity<String>> login(
             @RequestHeader("Authorization") String authHeader) {

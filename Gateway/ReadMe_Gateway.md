@@ -38,3 +38,10 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 
 # solution : docker
 1. renommer localhost dans la classe customRouteLocator correspondant à chaque interface en patientms, notems et riskms 
+
+# Gateway : javadoc
+1. Refactorisation des codes sources : les classes, le fichier pom.xml
+2. Ajout pour chaque package le ficher  package-info.java
+4. lancer la commande "mvn javadoc:javadoc"
+3. Pour accéder à la page javadoc de Gateway :
+  =>  Gateway/target/site/apidocs/index.html
