@@ -61,7 +61,7 @@
 # solution8 : Client
 1.  Intégration dans Client le niveau de risque.
 
-# Solution : Dockerisation du projet Medilabo Solutions
+## Solution : Dockerisation du projet Medilabo Solutions
 1. Renommage Patient_Ms, Note_Ms et Risk_Ms en Patientms, Notems et Riskms
 2. Implémentation fichier Dockerfile pour chaque interface.
 3. Implémentation fichier docker-composer.yml pour l'ensemble du projet.
@@ -69,15 +69,20 @@
 <img width="1717" height="332" alt="image" src="https://github.com/user-attachments/assets/3757fbc2-75db-453f-abef-b4e73267614b" />
 
 
-# Master
+## Master
 1 Merge de la branch Solution vers Master.  
 2. GET http://localhost:8080/patient  
 
 <img width="1378" height="504" alt="image" src="https://github.com/user-attachments/assets/80574b38-865f-4f3a-a771-d45f08e7613f" />
 
-# Master2 : Gateway ( pour plus de détails voir le fichier ReadMe_Gateway.md dans Gateway)
-1. Mise en place de Javadoc pour la Gateway
-2. Pour accéder à la page javadoc de Gateway :
-      =>  Local  : Gateway/target/site/apidocs/index.html en local
-      =>  Github : /docs/index.html  
-   
+## Master2 : Gateway ( pour plus de détails voir le fichier ReadMe_Gateway.md dans Gateway)
+1. Mise en place de Javadoc pour la Gateway  
+2. Pour accéder à la page javadoc de Gateway, deux façon:   
+      =>  Local (IDE Intellij ) : Gateway/target/site/apidocs/index.html   
+      
+   <img width="443" height="215" alt="image" src="https://github.com/user-attachments/assets/aecbed49-d147-4a70-bb3e-c09a1772b737" />
+
+     =>  Github : "https://leangoc.github.io/MyP9MediLabo"  
+   <img width="437" height="213" alt="image" src="https://github.com/user-attachments/assets/75af24ef-65dd-456f-a478-e4788faafc2a" />
+
+
