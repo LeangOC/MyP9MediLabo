@@ -79,5 +79,5 @@
 1. Mise en place de Javadoc pour la Gateway
 2. Pour accéder à la page javadoc de Gateway :
       =>  Local  : Gateway/target/site/apidocs/index.html en local
-      =>  Github : /javadoc/index.html  
+      =>  Github : /docs/index.html  
    
