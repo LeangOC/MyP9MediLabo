@@ -42,6 +42,9 @@ Mais pour la requête sur port 8080 de l'interface Client  "http://localhost:808
 # Gateway : javadoc
 1. Refactorisation des codes sources : les classes, le fichier pom.xml
 2. Ajout pour chaque package le ficher  package-info.java
-4. lancer la commande "mvn javadoc:javadoc"
-3. Pour accéder à la page javadoc de Gateway :
-  =>  Gateway/target/site/apidocs/index.html
+3. lancer la commande "mvn javadoc:javadoc"
+4. Création répertoire Gateway/javadoc
+5. copier le fichier index.html  et le répertoire de Gateway/target/site/apidocs/ vers le répertoire com vers Gateway/javadoc
+6. Pour accéder à la page javadoc de Gateway :
+  =>  Local : Gateway/target/site/apidocs/index.html en local
+  =>  Github : Gateway/javadoc/index.html 
