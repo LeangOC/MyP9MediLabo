@@ -86,5 +86,10 @@
    <img width="437" height="213" alt="image" src="https://github.com/user-attachments/assets/75af24ef-65dd-456f-a478-e4788faafc2a" />
 
 
-# master3 : Notems, Patientms
-1. Ajout la fonctionnalité de la suppression des notes liées à un patient dans la base de MongoDB
+# master3 : Notems, Patientms  
+1. Ajout la fonctionnalité de la suppression des notes liées à un patient dans la base de MongoDB  
+Console Notems: suppression des notes relatives à la patient avec id=5  
+<img width="1144" height="137" alt="image" src="https://github.com/user-attachments/assets/be3b825a-8fc5-43f0-957f-fc4016b600bc" />
+
+
+   
