@@ -7,3 +7,8 @@
 
 # solution
 1. renommage du projet en notems
+
+# master3 
+1. Ajouter l'endpoint @DeleteMapping("/patient/{id}") dans la classe NoteController
+2. Ajouter la methode deleteByPatientId(Integer patientId) dans classe NoteRepository
+3. Implémentation de Logger SLF4J dans la classe NoteController : 

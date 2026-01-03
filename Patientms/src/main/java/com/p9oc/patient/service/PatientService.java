@@ -1,5 +1,6 @@
 package com.p9oc.patient.service;
 import com.p9oc.patient.model.Patient;
+import com.p9oc.patient.proxies.NoteProxy;
 import com.p9oc.patient.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,11 +13,13 @@ import java.util.Optional;
 @Transactional
 public class PatientService {
 
-    @Autowired
-    private PatientRepository patientRepository;
+    private final PatientRepository patientRepository;
+    private final NoteProxy noteProxy;
 
-    public PatientService(PatientRepository patientRepository) {
+    public PatientService(PatientRepository patientRepository,
+                          NoteProxy noteProxy) {
         this.patientRepository = patientRepository;
+        this.noteProxy = noteProxy;
     }
 
     public List<Patient> getAllPatients() {
@@ -32,19 +35,21 @@ public class PatientService {
     }
 
     public void deletePatient(Integer id) {
-        if (patientRepository.existsById(id)) {
-            patientRepository.deleteById(id);
-        } else {
+        if (!patientRepository.existsById(id)) {
             throw new IllegalArgumentException("Patient not found.");
         }
+
+        // Suppression des notes AVANT suppression du patient
+        noteProxy.deleteNotesByPatient(id);
+
+        patientRepository.deleteById(id);
     }
+
     public Patient updatePatient(Patient updatedPatient) {
-        if (patientRepository.existsById(updatedPatient.getId())) {
-            updatedPatient.setId(updatedPatient.getId());
-            return patientRepository.save(updatedPatient);
-        } else {
+        if (!patientRepository.existsById(updatedPatient.getId())) {
             throw new IllegalArgumentException("Patient not found.");
         }
+        return patientRepository.save(updatedPatient);
     }
 }
 

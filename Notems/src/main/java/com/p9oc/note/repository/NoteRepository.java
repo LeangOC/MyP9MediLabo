@@ -8,4 +8,6 @@ import java.util.List;
 public interface NoteRepository extends MongoRepository<Note, String> {
 
     List<Note> findByPatientId(Integer patientId);
+    long countByPatientId(Integer patientId);
+    void deleteByPatientId(Integer patientId);
 }

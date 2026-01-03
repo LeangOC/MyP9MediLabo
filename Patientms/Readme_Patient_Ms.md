@@ -29,3 +29,9 @@
 
 # solution
 1. Renommer le projet patientms
+
+# master3
+1. Implémenter l'interface NoteProxy pour le FeignClient : url = "http://notems:8083"
+2. Ajouter l'annotation @EnableFeignClients dans la classe principale PatientMsApplication
+3. Refactoriser la classe PatientService en ajoutant dans la méthode PatientService.deletePatient la méthode  noteProxy.deleteNotesByPatient(id);
+
