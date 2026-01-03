@@ -16,3 +16,8 @@
 
 # solution
 1. Renommer le projet en riskms
+
+# master4 
+1. Refactorisation fichier pom.xml pour JaCoCo
+2. Implémentation tests RiskServiceTest
+3. Implémentation tests RiskControllerTest
