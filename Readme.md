@@ -94,3 +94,12 @@ Console Notems: suppression des notes relatives à la patient avec id=5
 # master4 : Riskms
 1. Implémentation des Tests sur Riskms
    
+   RiskControllerTest :     
+   <img width="970" height="150" alt="image" src="https://github.com/user-attachments/assets/c697a289-b9a2-42a8-ba02-fc11834516ce" />
+
+   RiskServiceTest :  
+   <img width="979" height="155" alt="image" src="https://github.com/user-attachments/assets/d4ff532a-fb2a-43be-bb78-570447e923c8" />
+
+
+   
+   
