@@ -1,0 +1,10 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+risk,com.p9oc.risk.model,RiskAssessment,107,15,22,0,1,3,17,3,6,3
+risk,com.p9oc.risk.model,NoteBean,65,10,14,0,0,2,11,3,4,3
+risk,com.p9oc.risk.model,PatientBean,135,21,30,0,1,3,20,6,5,6
+risk,com.p9oc.risk.model,RiskLevel,0,27,0,0,0,5,0,1,0,1
+risk,com.p9oc.risk,RiskApplication,5,3,0,0,2,1,1,1,1,1
+risk,com.p9oc.risk.controller,RiskController,0,15,0,0,0,5,0,2,0,2
+risk,com.p9oc.risk.security,FeignAuthInterceptor,25,5,4,0,7,2,3,2,1,2
+risk,com.p9oc.risk.service,RiskTriggers,0,53,0,0,0,1,0,1,0,1
+risk,com.p9oc.risk.service,RiskService,6,109,5,15,1,29,5,11,0,6

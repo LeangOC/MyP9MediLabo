@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RiskService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">risk</a> &gt; <a href="index.source.html" class="el_package">com.p9oc.risk.service</a> &gt; <span class="el_source">RiskService.java</span></div><h1>RiskService.java</h1><pre class="source lang-java linenums">package com.p9oc.risk.service;
+
+import com.p9oc.risk.model.NoteBean;
+import com.p9oc.risk.model.PatientBean;
+import com.p9oc.risk.model.RiskAssessment;
+import com.p9oc.risk.model.RiskLevel;
+import com.p9oc.risk.proxy.NoteProxy;
+import com.p9oc.risk.proxy.PatientProxy;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.List;
+
+import static com.p9oc.risk.service.RiskTriggers.TRIGGERS;
+
+@Service
+public class RiskService {
+
+    private final PatientProxy patientProxy;
+    private final NoteProxy noteProxy;
+
+<span class="fc" id="L23">    public RiskService(PatientProxy patientProxy, NoteProxy noteProxy) {</span>
+<span class="fc" id="L24">        this.patientProxy = patientProxy;</span>
+<span class="fc" id="L25">        this.noteProxy = noteProxy;</span>
+<span class="fc" id="L26">    }</span>
+
+    public RiskAssessment assessRisk(Integer patientId) {
+
+<span class="fc" id="L30">        PatientBean patient = patientProxy.getPatient(patientId);</span>
+<span class="fc" id="L31">        List&lt;NoteBean&gt; note = noteProxy.getNotes(patientId);</span>
+
+<span class="fc" id="L33">        int age = Period.between(patient.getBirthdate(), LocalDate.now()).getYears();</span>
+<span class="fc" id="L34">        boolean isMale = &quot;M&quot;.equalsIgnoreCase(patient.getGender());</span>
+
+<span class="fc" id="L36">        int triggerCount = countTriggers(note);</span>
+
+<span class="fc" id="L38">        RiskLevel level = calculateRisk(age, isMale, triggerCount);</span>
+
+<span class="fc" id="L40">        return new RiskAssessment(patientId, level);</span>
+    }
+
+    private int countTriggers(List&lt;NoteBean&gt; notes) {
+<span class="fc" id="L44">        return notes.stream()</span>
+<span class="fc" id="L45">                .map(NoteBean::getNote)</span>
+<span class="fc" id="L46">                .map(String::toLowerCase)</span>
+<span class="fc" id="L47">                .mapToInt(note -&gt;</span>
+<span class="fc" id="L48">                        (int) TRIGGERS.stream()</span>
+<span class="fc" id="L49">                                .filter(t -&gt; note.contains(t.toLowerCase()))</span>
+<span class="fc" id="L50">                                .count()</span>
+<span class="fc" id="L51">                ).sum();</span>
+    }
+
+    private RiskLevel calculateRisk(int age, boolean isMale, int triggers) {
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (triggers == 0) return RiskLevel.NONE;</span>
+
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (age &gt; 30) {</span>
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">            if (triggers &gt;= 8) return RiskLevel.EARLY_ONSET;</span>
+<span class="fc bfc" id="L60" title="All 2 branches covered.">            if (triggers &gt;= 6) return RiskLevel.IN_DANGER;</span>
+<span class="pc bpc" id="L61" title="1 of 2 branches missed.">            if (triggers &gt;= 2) return RiskLevel.BORDERLINE;</span>
+        } else {
+<span class="fc bfc" id="L63" title="All 2 branches covered.">            if (isMale) {</span>
+<span class="fc bfc" id="L64" title="All 2 branches covered.">                if (triggers &gt;= 5) return RiskLevel.EARLY_ONSET;</span>
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">                if (triggers &gt;= 3) return RiskLevel.IN_DANGER;</span>
+            } else {
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">                if (triggers &gt;= 7) return RiskLevel.EARLY_ONSET;</span>
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">                if (triggers &gt;= 4) return RiskLevel.IN_DANGER;</span>
+            }
+        }
+
+<span class="nc" id="L72">        return RiskLevel.NONE;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
