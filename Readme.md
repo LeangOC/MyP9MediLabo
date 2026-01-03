@@ -70,7 +70,7 @@
 
 
 ## Master
-1 Merge de la branch Solution vers Master.  
+1. Merge de la branch Solution vers Master.  
 2. GET http://localhost:8080/patient  
 
 <img width="1378" height="504" alt="image" src="https://github.com/user-attachments/assets/80574b38-865f-4f3a-a771-d45f08e7613f" />
@@ -100,6 +100,7 @@ Console Notems: suppression des notes relatives à la patient avec id=5
    RiskServiceTest :  
    <img width="979" height="155" alt="image" src="https://github.com/user-attachments/assets/d4ff532a-fb2a-43be-bb78-570447e923c8" />
 
-
+# master <= master4
+1. Merge de la branch master4 vers master.
    
    
